@@ -3,11 +3,10 @@ import { Slot } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 
-import { globalStyles } from '@/styles/global-styles';
+import { Colors } from '@/constants/theme';
 
 const RootLayout = () => {
   // Ref: https://docs.expo.dev/versions/latest/sdk/font/
-  // La fuente vive en ./assets/fonts (raíz del proyecto), por eso se sube dos niveles desde src/app
   const [loaded] = useFonts({
     SpaceMono: require('../../assets/fonts/SpaceMono-Regular.ttf'),
   });
@@ -17,7 +16,7 @@ const RootLayout = () => {
   }
 
   return (
-    <View style={globalStyles.background}>
+    <View style={{ backgroundColor: Colors.background, flex: 1 }}>
       <Slot />
 
       <StatusBar style="light" />
